@@ -20,6 +20,10 @@ module.exports = {
   },
   module: {
     loaders: [
+      { 
+        test: /\.json$/, 
+        loader: 'json-loader'
+      },
       {
         test: /\.js$/,
         loaders: ['react-hot', 'babel'],
@@ -50,4 +54,10 @@ module.exports = {
       dry: false, // true for simulation
     }),
   ],
+  node: {
+    console: true,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  },
 };

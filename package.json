@@ -9,7 +9,7 @@
     "url": "https://github.com/daniil/coinsquare-take-home"
   },
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --progress --public coinsquare-take-home-daniil.c9users.io --host $IP --port $PORT",
+    "start": "PROXY_PORT=8081 node cors-anywhere  | webpack-dev-server --hot --inline --progress --public coinsquare-take-home-daniil.c9users.io --host $IP --port $PORT",
     "build-dev": "webpack --config webpack.dev.config.js",
     "build-prod": "webpack -p --config webpack.prod.config.js",
     "test": "mocha --recursive --compilers js:babel-register --require babel-polyfill --require ignore-styles",
@@ -37,6 +37,7 @@
     "redux-saga": "^0.14.3"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-polyfill": "^6.20.0",
@@ -45,15 +46,18 @@
     "babel-preset-stage-3": "^6.17.0",
     "babel-runtime": "^6.20.0",
     "clean-webpack-plugin": "^0.1.15",
+    "cors-anywhere": "^0.4.1",
     "css-loader": "^0.26.1",
     "enzyme": "^2.7.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "ignore-styles": "^5.0.1",
+    "json-loader": "^0.5.7",
     "mocha": "^3.2.0",
     "node-sass": "^4.3.0",
     "react-addons-test-utils": "^15.4.2",
     "react-hot-loader": "^1.3.1",
     "redux-freeze": "^0.1.5",
+    "request": "^2.85.0",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0",
