@@ -1,0 +1,19 @@
+.btn-action {
+  width: 100%;
+  padding: 25px 0;
+  background-color: $bg-button;
+  border: none;
+  font-size: 18px;
+  color: $white;
+  text-align: center;
+  letter-spacing: 1.5px;
+  &:disabled {
+    opacity: 0.5;
+  }
+  &:not(:disabled) {
+    cursor: pointer;
+    &:hover {
+      background-color: lighten($bg-button, 10%);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.account-balance {
+  margin-bottom: 20px;
+  .section-heading {
+    margin-bottom: 25px;
+  }
+  .balance-line {
+    margin-bottom: 10px;
+    padding-left: $input-padding;
+  }
+  .balance-label {
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin-right: 20px;
+    font-size: 16px;
+  }
+  .balance-value {
+    display: inline-block;
+    vertical-align: text-bottom;
+    font-size: 14px;
+  }
+}

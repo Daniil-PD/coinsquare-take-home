@@ -3,6 +3,11 @@ import { connect } from "react-redux";
 import "../stylesheets/main.scss";
 
 export class App extends React.Component {
+  componentWillMount() {
+    const { dispatch } = this.props
+    dispatch({type: 'BFX_FETCH_TICKER'})
+  }
+  
   render() {
     return (
       <div className="container">

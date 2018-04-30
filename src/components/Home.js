@@ -1,11 +1,12 @@
 import React from "react";
+import CurrencyPairTrading from "./common/CurrencyPairTrading";
 
 export default class Home extends React.Component {
   render() {
     return (
       <div className="page-home">
-        <h4>Hello world testing HOT!</h4>
+        <CurrencyPairTrading />
       </div>
-    );
+    )
   }
 }

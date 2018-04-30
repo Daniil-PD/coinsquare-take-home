@@ -1,6 +1,6 @@
 const defaultState = {
   amountUSD: 156.12,
-  amountBTC: 0.00000000
+  amountBTC: Number(0).toFixed(8)
 }
 
 // account reducer
@@ -9,8 +9,8 @@ export default function account(state = defaultState, action) {
     case 'ACCOUNT_UPDATE':
       const lastPrice = parseFloat(JSON.parse(action.ticker).last_price)
       return {
-        amountUSD: state.amountUSD - action.amount,
-        amountBTC: action.amount / lastPrice
+        amountUSD: Number(state.amountUSD - action.amount).toFixed(2),
+        amountBTC: Number(action.amount / lastPrice).toFixed(8)
       }
 
     // initial state
