@@ -2,7 +2,7 @@ const request = require('request')
 
 export default class ApiBFX {
   static get CORSProxy() {
-    return 'http://coinsquare-take-home-daniil.c9users.io:8081/'
+    return (process.env.NODE_ENV !== 'production') ? 'http://coinsquare-take-home-daniil.c9users.io:8081/' : ''
   }
   
   static get URL() {

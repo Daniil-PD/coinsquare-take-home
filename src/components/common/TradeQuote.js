@@ -32,7 +32,7 @@ export class TradeQuote extends React.Component {
         return 'Display Quote'
       }
       const lastPrice = parseFloat(JSON.parse(ticker).last_price)
-      return props.currAmount / lastPrice
+      return currAmount / lastPrice
   }
 }
 

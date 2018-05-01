@@ -15,6 +15,11 @@ export class CurrencyPairTrading extends React.Component {
     }
   }
   
+  componentWillMount() {
+    const { dispatch } = this.props
+    dispatch({type: 'BFX_FETCH_TICKER'})
+  }
+  
   render() {
     return (
       <div className="currency-pair-trading">
@@ -44,10 +49,11 @@ export class CurrencyPairTrading extends React.Component {
       type: 'REQUEST_UPDATE_ACCOUNT',
       amount: this.state.currAmount
     })
+    // refresh the form and refresh a ticker for more up-to-date quote prediction
     this.setState({
       tradeKey: Date.now(),
       currAmount: null
-    })
+    }, () => dispatch({type: 'BFX_FETCH_TICKER'}))
   }
 }
 
