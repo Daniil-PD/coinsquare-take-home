@@ -1,5 +1,5 @@
-import { call, put } from "redux-saga/effects";
-import ApiBFX from "../api/bfx";
+import { call, put } from 'redux-saga/effects';
+import ApiBFX from '../api/bfx';
 
 // fetch the ticker
 export function* bfxFetchTicker(action) {

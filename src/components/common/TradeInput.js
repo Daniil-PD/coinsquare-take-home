@@ -1,17 +1,17 @@
-import React, { PropTypes } from "react";
-import { connect } from "react-redux";
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 export class TradeInput extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     
     this.state = {
       currAmount: ''
-    }
+    };
   }
 
   render() {
-    const { account } = this.props
+    const { account } = this.props;
 
     return (
       <div className="trade-input">
@@ -25,26 +25,26 @@ export class TradeInput extends React.Component {
           onChange={::this.onChange}
           value={this.state.currAmount} />
       </div>
-    )
+    );
   }
   
   onChange(e) {
-    const amountMax = this.props.account.amountUSD
-    const currAmount = (e.target.value > amountMax) ? amountMax : e.target.value
+    const amountMax = this.props.account.amountUSD;
+    const currAmount = (e.target.value > amountMax) ? amountMax : e.target.value;
     this.setState({
       currAmount
-    }, () => this.props.onEnterAmount(parseFloat(this.state.currAmount)))
+    }, () => this.props.onEnterAmount(parseFloat(this.state.currAmount)));
   }
 }
 
 function mapStateToProps(state) {
   return {
-    account: state.account,
-  }
+    account: state.account
+  };
 }
 
 export default connect(mapStateToProps)(TradeInput);
 
 TradeInput.propTypes = {
-  onEnterAmount: PropTypes.func.isRequired,
-}
+  onEnterAmount: PropTypes.func.isRequired
+};

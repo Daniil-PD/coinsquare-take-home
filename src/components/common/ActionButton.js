@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React, { PropTypes } from 'react';
 
 export default class ActionButton extends React.Component {
   render() {
@@ -17,4 +17,4 @@ ActionButton.propTypes = {
   isActive: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
   onAction: PropTypes.func.isRequired,
-}
+};

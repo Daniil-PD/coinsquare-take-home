@@ -1,5 +1,5 @@
-import React from "react";
-import CurrencyPairTrading from "./common/CurrencyPairTrading";
+import React from 'react';
+import CurrencyPairTrading from './common/CurrencyPairTrading';
 
 export default class Home extends React.Component {
   render() {
@@ -7,6 +7,6 @@ export default class Home extends React.Component {
       <div className="page-home">
         <CurrencyPairTrading />
       </div>
-    )
+    );
   }
 }

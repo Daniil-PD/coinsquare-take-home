@@ -1,7 +1,7 @@
-import { takeLatest } from "redux-saga";
-import { fork } from "redux-saga/effects";
-import { bfxFetchTicker } from "./bfx";
-import { updateAccount } from "./account";
+import { takeLatest } from 'redux-saga';
+import { fork } from 'redux-saga/effects';
+import { bfxFetchTicker } from './bfx';
+import { updateAccount } from './account';
 
 // main saga generators
 export function* sagas() {

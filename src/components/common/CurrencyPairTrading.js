@@ -1,23 +1,23 @@
-import React from "react";
-import { connect } from "react-redux";
-import AccountBalance from "./AccountBalance";
-import TradeInput from "./TradeInput";
-import TradeQuote from "./TradeQuote";
-import ActionButton from "./ActionButton";
+import React from 'react';
+import { connect } from 'react-redux';
+import AccountBalance from './AccountBalance';
+import TradeInput from './TradeInput';
+import TradeQuote from './TradeQuote';
+import ActionButton from './ActionButton';
 
 export class CurrencyPairTrading extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     
     this.state = {
       tradeKey: Date.now(),
       currAmount: null
-    }
+    };
   }
   
   componentWillMount() {
-    const { dispatch } = this.props
-    dispatch({type: 'BFX_FETCH_TICKER'})
+    const { dispatch } = this.props;
+    dispatch({type: 'BFX_FETCH_TICKER'});
   }
   
   render() {
@@ -40,20 +40,20 @@ export class CurrencyPairTrading extends React.Component {
   onEnterAmount(amount) {
     this.setState({
       currAmount: amount
-    })
+    });
   }
   
   onTrade() {
-    const { dispatch } = this.props
+    const { dispatch } = this.props;
     dispatch({
       type: 'REQUEST_UPDATE_ACCOUNT',
       amount: this.state.currAmount
-    })
+    });
     // refresh the form and refresh a ticker for more up-to-date quote prediction
     this.setState({
       tradeKey: Date.now(),
       currAmount: null
-    }, () => dispatch({type: 'BFX_FETCH_TICKER'}))
+    }, () => dispatch({type: 'BFX_FETCH_TICKER'}));
   }
 }
 

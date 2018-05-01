@@ -1,5 +1,5 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 export class AccountBalance extends React.Component {
   constructor(props) {
@@ -14,11 +14,11 @@ export class AccountBalance extends React.Component {
         <h3 className="section-heading">Account Balance</h3>
         <div className="balance-line">
           <span className="balance-label">USD</span>
-          <span className="balance-value">{ account.amountUSD }</span>
+          <span className="balance-value">{account.amountUSD}</span>
         </div>
         <div className="balance-line">
           <span className="balance-label">BTC</span>
-          <span className="balance-value">{ account.amountBTC }</span>
+          <span className="balance-value">{account.amountBTC}</span>
         </div>
       </div>
     );
@@ -27,7 +27,7 @@ export class AccountBalance extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    account: state.account,
+    account: state.account
   };
 }
 
