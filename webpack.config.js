@@ -40,12 +40,18 @@ module.exports = {
       }
     ],
   },
+  /*
+    C9 specific devServer config
+  */
+  // devServer: {
+  //   historyApiFallback: true,
+  //   contentBase: './public',
+  //   host: process.env.IP,
+  //   port: process.env.PORT,
+  //   "public": "coinsquare-take-home-daniil.c9users.io"
+  // },
   devServer: {
-    historyApiFallback: true,
-    contentBase: './public',
-    host: process.env.IP,
-    port: process.env.PORT,
-    "public": "coinsquare-take-home-daniil.c9users.io"
+    contentBase: __dirname + '/public',
   },
   plugins: [
     new CleanWebpackPlugin(['css/main.css', 'js/bundle.js'], {

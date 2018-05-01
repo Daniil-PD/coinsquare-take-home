@@ -11,7 +11,7 @@
  
 ### Running/Deploying
 - Setup: `npm install`
-- Dev: `npm start`
+- Dev: `npm start` (the `npm run start-c9` version is for C9 specific config)
 - Dev build: `npm run build-dev`
 - Prod build: `npm run build-prod`
 - Testing: `npm run test` or watch: `npm run test-watch` (testing currently missing)

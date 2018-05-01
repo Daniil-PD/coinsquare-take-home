@@ -9,7 +9,8 @@
     "url": "https://github.com/daniil/coinsquare-take-home"
   },
   "scripts": {
-    "start": "PROXY_PORT=8081 node cors-anywhere | webpack-dev-server --hot --inline --progress --public coinsquare-take-home-daniil.c9users.io --host $IP --port $PORT",
+    "start": "PROXY_PORT=8081 node cors-anywhere | webpack-dev-server --inline --hot --history-api-fallback --host localhost --port 8080",
+    "start-c9": "PROXY_PORT=8081 node cors-anywhere | webpack-dev-server --hot --inline --progress --public coinsquare-take-home-daniil.c9users.io --host $IP --port $PORT",
     "build-dev": "webpack --config webpack.dev.config.js",
     "build-prod": "webpack -p --config webpack.prod.config.js",
     "test": "mocha --recursive --compilers js:babel-register --require babel-polyfill --require ignore-styles",

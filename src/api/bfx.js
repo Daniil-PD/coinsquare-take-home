@@ -2,7 +2,8 @@ const request = require('request');
 
 export default class ApiBFX {
   static get CORSProxy() {
-    return (process.env.NODE_ENV !== 'production') ? 'http://coinsquare-take-home-daniil.c9users.io:8081/' : '';
+    const proxyURL = (window.location.host.indexOf('c9users') !== -1) ? 'http://coinsquare-take-home-daniil.c9users.io:8081/' : 'http://localhost:8081/';
+    return (process.env.NODE_ENV !== 'production') ? proxyURL : '';
   }
   
   static get URL() {
